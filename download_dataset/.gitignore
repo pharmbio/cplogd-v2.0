@@ -1,0 +1,4 @@
+# Do not save the database itself
+
+chembl_33_mysql/
+chembl_33_mysql.tar.gz
