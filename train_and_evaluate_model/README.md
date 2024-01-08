@@ -49,6 +49,7 @@ Further note that as the data set is rather large, we need to increase the avail
 java -Xmx12g -jar cpsign-2.0.0-rc6-fatjar.jar train \
     --data-set output/precomputed_cleaned.jar \
     --model-out output/trained-model.jar \
+    --model-name cpLogD_v2 \
     --logfile output/model-training.log \
     --predictor-type ACP_Regression \
     --ncm LogNormalized:beta=0.1 \

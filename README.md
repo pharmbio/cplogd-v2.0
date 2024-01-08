@@ -11,7 +11,12 @@ The latest version of ChEMBL was downloaded from the [download page](https://che
 
 ### 2. Model development and evaluation
 
-How the modeling was performed is detailed in [train and evaluate model](train_and_evaluate_model/README.md). Model evaluation was performed in the same way as for the initial model, using a withheld dataset of 100,000 test compounds. 
+How the modeling was performed is detailed in [train and evaluate model](train_and_evaluate_model/README.md). Model evaluation was performed in the same way as for the initial model, using a withheld dataset of 100,000 test compounds.
+
+
+### 3. Docker image generation
+
+To serve the model as Java web server with OpenAPI documented REST interface we copy the *trained-model.jar* that was generated in the last step into the [generate_service](generate_service/) directory and use the [Dockerfile](generate_service/Dockerfile) to build a local docker image. This image is based on the base containers from the [cpsign_predict_services](https://github.com/arosbio/cpsign_predict_services) repository. Follow the guide in that repo to publish your own service, or download the image from the `packages` tab at GitHub.
 
 ## Model performance
 
