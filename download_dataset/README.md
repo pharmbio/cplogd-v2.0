@@ -1,5 +1,7 @@
 # Extraction from ChEMBL v33
 
+The latest version of [ChEMBL](https://www.ebi.ac.uk/chembl/) was downloaded from their [download page](https://chembl.gitbook.io/chembl-interface-documentation/downloads), version 33 published in May 2023. The MySQL version was loaded in a local MySQL community server following their instructions.
+
 After downloading and installing the `chembl_v33` database, extraction should be performed based on the tables `compound_properties` and `compound_structures`. You can try it out to e.g. list the first 20 records using (assuming you are logged in to the database and running mysql);
 
 ```sql

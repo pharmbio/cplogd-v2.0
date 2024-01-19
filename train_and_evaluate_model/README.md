@@ -1,14 +1,14 @@
 # Model development
 
-Note here that we do not perform structure standardization as it was performed in the original paper, as CPSign already performs at least some of the standardization steps done in the Ambit program that was previously used. The Ambit software has not been updated in many years and is no longer actively developed.
+Note here that we do not perform structure standardization as it was performed in the original paper, as CPSign already performs at least some of the standardization steps done in the Ambit program that was previously used. The Ambit software is no longer actively developed and have not been updated in many years.
 
 The model development is performed in a similar manner as performed in the original paper, here we randomly split out 100,000 records for model evaluation and use the same hyper-parameters that were devised in the original work. However, as we have a belief in the utility of object-based confidence intervals we **do** include an error model in order to get these normalized intervals rather than fixed-size prediction intervals.
 
 ## Model training steps:
 
-### 1. Split out random validation-set
+### 1. Split out a random validation-set
 
-Run the python script [split_dataset.py](split_dataset.py), which only requires that you have Pandas installed. The output should be two gzip files: `validation_set.csv.gz`(100,000 observations) and `training_set.csv.gz` (remaining observations). 
+Run the python script [split_dataset.py](split_dataset.py), which only requires that you have Python and the [Pandas](https://pandas.pydata.org/) library installed. The output should be two gzip files: `validation_set.csv.gz`(100,000 observations) and `training_set.csv.gz` (remaining observations). 
 
 ### 2. Precompute the signatures for the training set
 
@@ -27,7 +27,7 @@ This require that you download a version of [CPSign](https://github.com/arosbio/
 
 ### 3. Remove duplicate entries
 
-After signatures have been generated we filtered duplicate entries by preserving the median value if there there were duplicates found (i.e. only preserving a single observation). **Note**: use CPSign of version `rc7` or later for this step, as the rc6 version did this in `O(N*N)` whereas the rc7 and later uses an improved hashing algorithm to *greatly* improve this (19 hours vs 1 second).
+After signatures have been generated we filtered duplicate entries by preserving the median value if there there were duplicates found (i.e. only preserving a single observation). **Note**: use CPSign of version `2.0.0-rc7` or later for this step, as the `rc6` version did this using an `O(N*N)` algorithm whereas the rc7 and later uses an improved hashing algorithm to *greatly* improve this (19 hours vs 1 second).
 
 ```bash
 ./cpsign-2.0.0-rc6-fatjar.jar transform \
