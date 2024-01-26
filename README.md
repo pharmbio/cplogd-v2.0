@@ -2,6 +2,8 @@
 
 This is a re-take of the cpLogD model previously published in [A confidence predictor for logD using conformal regression and a support-vector machine](https://link.springer.com/article/10.1186/s13321-018-0271-1). The main update is that it is based on a newer version of [ChEMBL](https://www.ebi.ac.uk/chembl/) (v33, May 2023), and that it is built using a later version of [CPSign](https://github.com/arosbio/cpsign) - which is now open source for non-commercial use. **Note: the old cpLogD was based on the computed property `acd_logd` in ChEMBL but which is no longer supplied, and have been replaced by the `CX LogD 7.4` property which was now used.**
 
+The service is now publicly available at https://cplogd.serve.scilifelab.se/ and you can view the OpenAPI specification at https://cplogd.serve.scilifelab.se/api/openapi.json. 
+
 ## Steps for generation
 
 ### 1. Downloading data from ChEMBL
