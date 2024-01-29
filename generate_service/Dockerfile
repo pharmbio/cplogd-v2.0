@@ -1,4 +1,4 @@
-FROM ghcr.io/arosbio/cpsign-cp-reg-server:latest
+FROM ghcr.io/arosbio/cpsign-cp-reg-server:latest-full
 
 LABEL org.opencontainers.image.source=https://github.com/pharmbio/cplogd-v2.0
 LABEL org.opencontainers.image.description="CPSign model for predicting cpLogD - version 2"
