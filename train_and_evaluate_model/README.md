@@ -57,7 +57,7 @@ java -Xmx12g -jar cpsign-2.0.0-rc6-fatjar.jar train \
     --scorer LinearSVR:C=1:epsilon=0.0001 \
     --time \
     --seed 1701945333231 \
-    --percentiles \
+    --percentiles 1000 \
     --percentiles-data tsv training_set.csv.gz 
 ```
 
